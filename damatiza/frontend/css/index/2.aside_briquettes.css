@@ -1,0 +1,125 @@
+/* ========== Aside Our Briquettes ========== */
+/* ========== Card Our Briquettes ========== */
+.card-briquettes {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   gap: 5px;
+   width: 25px;
+   height: 25px;
+   color: #333;
+   background-color: #ccc;
+   font-size: 14px;
+   margin-bottom: 10px;
+   margin-right: 5px;
+   border-radius: 50%;
+}
+
+/* ========== Button prev next ========== */
+.splide__arrow {
+   top: 0px !important;
+   display: flex;
+   justify-content: center;
+}
+.splide__arrow--prev {
+   left: 77.6vw !important;
+}
+
+/* ========== Pagination ========== */
+.splide__pagination {
+   bottom: -2rem !important;
+}
+
+.splide__pagination__page {
+   width: 8px;
+   height: 6px;
+   background-color: #d9d9d9;
+   border-radius: 8px;
+}
+.splide__pagination__page.is-active {
+   width: 22px;
+   height: 6px;
+   background-color: #015ea1;
+}
+
+.splide__track {
+   min-width: 100%;
+   /* overflow: visible; */
+}
+
+.hide-scrollbars::-webkit-scrollbar {
+   display: none;
+}
+/* ========== Button Navigation ========== */
+.briquettes-button-navigation {
+   width: 100px;
+   height: 46px;
+   background-color: #fcfcfc !important;
+   color: #b5b5b5 !important;
+   font-weight: 500;
+   border-radius: 12px !important;
+}
+.briquettes-button-navigation.active {
+   color: white !important;
+   background-color: #015ea1 !important;
+   font-weight: 700 !important;
+}
+
+/* ========== Navigator Carousel Card Briquettes ========== */
+.briquettes-navigator-carousel {
+   width: 10px !important;
+   height: 6px !important;
+   background-color: #d9d9d9 !important;
+   border-radius: 8px;
+   border: 1px solid transparent !important;
+   margin-right: -3px !important;
+}
+.briquettes-navigator-carousel.active {
+   width: 22px !important;
+   background-color: #015ea1 !important;
+}
+
+/* ========== Prev & Next Carousel Card Briquettes ========== */
+.container-button-prev-next-carousel-card {
+   position: absolute;
+   top: -30px;
+   right: 0;
+   width: 70px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background-color: blue !important;
+}
+.button-prev-next-carousel-card {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   width: 32px;
+   height: 32px;
+   text-align: center;
+   background-color: #e7e7e7;
+   border-radius: 50%;
+}
+.carousel-control-prev-icon {
+   margin-right: 0px;
+   background-image: url("../../images/svg/prev.svg");
+   transform: scale(0.6);
+}
+.carousel-control-next-icon {
+   margin-left: 2px;
+   background-image: url("../../images/svg/next.svg");
+   transform: scale(0.6);
+}
+
+/* ========== Style Per Class ========== */
+.fs-10px {
+   font-size: 10px;
+}
+.fw-500 {
+   font-weight: 500;
+}
+
+/* ========== Media Query ========== */
+/* .mw-sm-99vw {
+   max-width: 100vw !important;
+} */

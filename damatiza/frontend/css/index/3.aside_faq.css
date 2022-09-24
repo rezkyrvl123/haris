@@ -1,0 +1,14 @@
+/* ========== Aside FAQ ========== */
+
+.accordion {
+   --bs-accordion-active-bg: #fff;
+   border: 0px solid black !important;
+}
+
+.accordion-button::after {
+   background-image: url("frontend/images/svg/plus.svg");
+   transform: scale(0.7) !important;
+}
+.accordion-button:not(.collapsed)::after {
+   background-image: url("frontend/images/svg/wrong.svg");
+}

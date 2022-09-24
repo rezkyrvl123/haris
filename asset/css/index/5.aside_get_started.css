@@ -1,0 +1,15 @@
+/* ========== Aside Get Started ========== */
+/* ========== Contact Form ========== */
+.input-contact-form {
+   height: 50px;
+   background-color: #f7f7f7;
+   border: none;
+   border-radius: 16px;
+   font-size: 14px;
+}
+.button-contact-form {
+   background-color: #015ea1;
+   height: 45px;
+   border-radius: 16px;
+   font-size: 14px;
+}

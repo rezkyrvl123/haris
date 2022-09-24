@@ -1,0 +1,10 @@
+/* Small */
+@media (max-width: 600px) {
+   /* Font Size */
+   .fz-sm-24px {
+      font-size: 24px !important;
+   }
+   .fz-sm-14px {
+      font-size: 14px !important;
+   }
+}
