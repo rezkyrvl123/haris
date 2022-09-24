@@ -7,6 +7,6 @@ class Dashboard extends CI_Controller {
 	{
 		// var_dump('Aku');
 		// die;
-		$this->load->view('Dashboard');
+		$this->load->view('V_Dashboard');
 	}
 }

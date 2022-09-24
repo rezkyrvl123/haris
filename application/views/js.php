@@ -36,3 +36,11 @@
       integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
       crossorigin="anonymous"
     ></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+    <script>
+    function clear(){
+		$('form').trigger("reset");
+		$('form input, form select, form textarea, form button').prop("disabled",false);
+		$(".kelompok-detail:not(:first)").remove();
+	   }
+   </script>
