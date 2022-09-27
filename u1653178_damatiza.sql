@@ -16,6 +16,22 @@ CREATE DATABASE /*!32312 IF NOT EXISTS*/`u1653178_damatiza` /*!40100 DEFAULT CHA
 
 USE `u1653178_damatiza`;
 
+/*Table structure for table `tbl_category` */
+
+DROP TABLE IF EXISTS `tbl_category`;
+
+CREATE TABLE `tbl_category` (
+  `id_category` int(11) NOT NULL AUTO_INCREMENT,
+  `nama_category` varchar(30) DEFAULT NULL,
+  PRIMARY KEY (`id_category`)
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4;
+
+/*Data for the table `tbl_category` */
+
+insert  into `tbl_category`(`id_category`,`nama_category`) values 
+(1,'Sepatu'),
+(2,'Baju');
+
 /*Table structure for table `tbl_order` */
 
 DROP TABLE IF EXISTS `tbl_order`;

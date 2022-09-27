@@ -165,13 +165,45 @@
         
         </nav>
       </section>
+    <!-- Button trigger modal -->
+<button type="button" class="btn btn-lg btn-primary btn-tambah" data-bs-toggle="modal" data-bs-target="#exampleModal">
+  Launch demo modal
+</button>
 
+<!-- Modal -->  
+<div class="modal fade modal-tampil" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="myModalLabel">Tambah Barang</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <form class="form-horizontal form-label-left" method="POST" autocomplete="off" enctype="multipart/form-data">
+      <div class="modal-body">
+        <input name="product_id" type="hidden" class="product_id">
+        <div class="form-group row ">
+							<label class="control-label col-md-3 col-sm-3 ">Nama Kategori</label>
+							<div class="col-md-9 col-sm-9 ">
+								<input name="nama_category" type="text" class="form-control nama_category" minlength="4" maxlength="50" placeholder="Masukkan Nama Barang" required>
+							</div>
+				</div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Tutup</button>
+        <button type="submit" class="btn btn-primary btn-simpan">Simpan</button>
+      </div>
+</form>
+    </div>
+  </div>
+</div>
+
+    <!-- End Modal Tambah -->
       <section class="d-flex flex-column gap-4">
         <div class="d-flex justify-content-between align-items-center gap-3">
           <h4 class="title-section-content">All</h4>
           <a href="#" class="btn-link">View All Shoes</a>
         </div>
-        <div class="d-flex gap-4 flex-wrap">
+        <!-- <div class="d-flex gap-4 flex-wrap">
           <div class="product-card">
             <img
               src="asset/images/nike_red.png"
@@ -289,9 +321,35 @@
               </button>
             </div>
           </div>
-        </div>
+        </div> -->
+                        <div class="block-content block-content-full">
+                            <table class="table table-bordered table-striped table-vcenter js-dataTable-full">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" style="width: 5%;">No</th>
+                                        <th>Nama Kategori</th>
+                                        <th class="text-center" style="width: 15%;">Aksi</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+									<?php $no = 1; foreach($tampil as $key){?>
+										<tr>
+											<td class="text-center"><?php echo $no;?></td>
+											<td><?php echo $key->nama_category; ?></td>
+											<td class="text-center">
+													<button type="button" class="btn btn-sm btn-warning btn-ubah" value="<?php echo $key->id_category?>" data-toggle="tooltip" title="Ubah">
+														<i class="fa fa-edit"></i>
+													</button>
+													<button type="button" class="btn btn-sm btn-danger btn-hapus" value="<?php echo $key->id_category?>" data-toggle="tooltip" title="Hapus">
+														<i class="fa fa-trash"></i>
+													</button>
+											</td>
+										</tr>
+									<?php $no++;}?>
+                                </tbody>
+                            </table>
+                        </div>
       </section>
-
       <section class="d-flex flex-column gap-4 mb-5">
        
       </section>
@@ -382,6 +440,52 @@
 <script src="<?php echo base_url();?>asset/js/pnotify/dist/pnotify.buttons.js"></script>
 <script src="<?php echo base_url();?>asset/js/pnotify/dist/pnotify.nonblock.js"></script>
 <script src="<?php echo base_url();?>asset/js/sweetalert2/sweetalert2.min.js"></script>
+
+<script>
+    function get_data(id_category){
+				$.ajax({
+					url : "<?php echo base_url();?>"+'Kategori/tampil_kategori',
+					type: "POST",
+					data: {
+						id_category:id_category
+					},
+					dataType: 'json',
+					success: function(respond){
+                        console.log(respond);
+						$(".id_category").val(respond.id_category);
+						$(".nama_category").val(respond.nama_category);
+					},
+					error: function() {
+						console.log('Error ya');
+					}
+				});
+			};
+            $(".btn-hapus").on("click", function(){
+				var id = $(this).attr("value");
+				hapus(id,'Kategori');
+			});
+            $(".btn-ubah").on("click", function(){
+				var id = $(this).attr("value");
+				$("#myModalLabel").html('Ubah Data');
+				$("form").attr("action","<?php echo base_url();?>"+'index.php/Kategori/ubah');
+				// $(".password").prop("required", false);
+				clear();
+				// $(".product_picture").parent().find("img").attr("src","");
+				// $(".product_picture").prop("required",false);
+				get_data(id);
+				$(".modal-tampil").modal("show");
+				$(".btn-simpan").show();
+			});
+            $(".btn-tambah").on("click", function(){
+				$("#myModalLabel").html('Tambah Data');
+				$("form").attr("action","<?php echo base_url();?>"+'index.php/Kategori/simpan');
+				clear();
+				$(".product_picture").parent().find("img").attr("src","");
+				$(".product_picture").prop("required",true);
+				$(".modal-tampil").modal("show");
+				$(".btn-simpan").show();
+			});
+</script>
 
   </body>
 </html>
