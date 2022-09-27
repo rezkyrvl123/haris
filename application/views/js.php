@@ -44,3 +44,62 @@
 		$(".kelompok-detail:not(:first)").remove();
 	   }
    </script>
+   <script>
+	function hapus(id,tabel){
+		Swal.fire({
+			html:
+				'<p class="font-16 font-weight-bold mt-3" style="font-family: Roboto, sans-serif"><b>Apakah Anda yakin ingin menghapus Data ini?</b></p><br><p class="font-weight-regular mb-1 px-3" style="font-family: Roboto, sans-serif; font-size: 16px;color: #7C8CA3!important " text-align="justify">Data yang telah dihapus tidak akan bisa dipulihkan kembali.</p>',
+			showCancelButton: true,
+			cancelButtonText: "Batal",
+			confirmButtonText: 'Hapus',
+			confirmButtonColor: '#dc3545',
+			reverseButtons: true
+		}).then((result) => {
+			if(result.value){
+				$.ajax({
+					url : "<?php echo base_url();?>"+tabel+"/hapus",
+					type : "POST",
+					data : {
+						id : id
+					},
+					success : function(data) {
+						new PNotify({
+							title: 'Sukses',
+							text: 'Berhasil Dihapus',
+							type: 'success',
+							nonblock: {
+								nonblock: true
+							},
+							styling: 'bootstrap3'
+						});
+						setTimeout(
+							function() {
+								location.reload();
+							}, 1000
+						);
+					},
+					error : function () {
+						new PNotify({
+							title: 'Gagal',
+							text: 'Gagal Dihapus',
+							type: 'error',
+							nonblock: {
+								nonblock: true
+							},
+							styling: 'bootstrap3'
+						});
+						setTimeout(
+							function() {
+								location.reload();
+							}, 1000
+						);
+					}
+				});
+			}
+		});
+	}
+	</script>
+<script src="<?php echo base_url();?>asset/js/pnotify/dist/pnotify.js"></script>
+<script src="<?php echo base_url();?>asset/js/pnotify/dist/pnotify.buttons.js"></script>
+<script src="<?php echo base_url();?>asset/js/pnotify/dist/pnotify.nonblock.js"></script>
+		<script src="<?php echo base_url();?>asset/js/sweetalert2/sweetalert2.min.js"></script>

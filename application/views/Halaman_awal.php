@@ -6,7 +6,50 @@
       <title>Dashboard</title>
       <!-- Favicon Icon -->
       <link rel="icon" type="image/x-icon" href="asset/images/logo/icon.png" />
-      <?php $this->load->view('css')?>
+      <!-- Bootstrap v.5.2 -->
+<link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+         crossorigin="anonymous"
+      />
+
+      <!-- Google Fonts -->
+      <link
+         href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap"
+         rel="stylesheet"
+      />
+
+      <!-- Bootstrap Icons -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+
+      <!-- Slider milik Our Briquettes -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css" />
+
+      <!-- ====== External CSS Per-Komponen ===== -->
+      <!-- Navbar Mobile -->
+      <link rel="stylesheet" href="<?php echo base_url()?>asset/css/index/1.navbar.css" />
+      <!-- Aside Our Briquettes -->
+      <link rel="stylesheet" href="<?php echo base_url()?>asset/css/index/2.aside_briquettes.css" />
+      <!-- Aside Faq -->
+      <link rel="stylesheet" href="<?php echo base_url()?>asset/css/index/3.aside_faq.css" />
+      <!-- Aside Process Production -->
+      <link rel="stylesheet" href="<?php echo base_url()?>asset/css/index/4.aside_process_production.css" />
+      <!-- Aside Get Started -->
+      <link rel="stylesheet" href="<?php echo base_url()?>asset/css/index/5.aside_get_started.css" />
+      <!-- Media Query -->
+      <link rel="stylesheet" href="<?php echo base_url()?>asset/css/index/6.media_query_public.css" />
+      <link rel="stylesheet" href="<?php echo base_url()?>asset/css/styles.css" />
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"/>
+      <link rel="stylesheet" href="<?php echo base_url();?>asset/js/pnotify/dist/pnotify.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>asset/js/pnotify/dist/pnotify.buttons.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>asset/js/pnotify/dist/pnotify.nonblock.css">
+   <link rel="stylesheet" href="<?php echo base_url();?>asset/js/sweetalert2/sweetalert2.min.css">
+  <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
    </head>
    <body style="font-family: 'Manrope', sans-serif; overflow-x: hidden">
       <!-- ================ Navbar ================ -->
@@ -134,11 +177,11 @@
                                     class="nav-link briquettes-button-navigation active d-flex justify-content-center align-items-center me-2 me-md-3"
                                     data-bs-toggle="tab"
                                     href="#data1"
-                                    >Briket</a
+                                    >Product</a
                                  >
                               </li>
 
-                              <li class="nav-item">
+                              <!-- <li class="nav-item">
                                  <a
                                     class="nav-link briquettes-button-navigation d-flex justify-content-center align-items-center me-2 me-md-3"
                                     data-bs-toggle="tab"
@@ -154,7 +197,7 @@
                                     href="#data3"
                                     >Pisang</a
                                  >
-                              </li>
+                              </li> -->
                            </ul>
                         </div>
 
@@ -175,50 +218,41 @@
                                              aria-current="true"
                                              aria-label="Slide 1"
                                           ></button>
-                                          <button
-                                             type="button"
-                                             data-bs-target="#carousel1"
-                                             data-bs-slide-to="1"
-                                             aria-label="Slide 2"
-                                             class="briquettes-navigator-carousel"
-                                          ></button>
-                                          <button
-                                             type="button"
-                                             data-bs-target="#carousel1"
-                                             data-bs-slide-to="2"
-                                             aria-label="Slide 3"
-                                             class="briquettes-navigator-carousel"
-                                          ></button>
+                                          
                                        </div>
                                        <div class="carousel-inner mw-sm-99vw pe-5" style="min-width: 90vw; margin-left: -45px; margin-top: -30px">
                                           <!-- ====== Slide 1 ====== -->
                                           <div class="carousel-item active overflow-auto hide-scrollbars ms-4 ms-md-0 ps-1 pe-2">
                                              <div class="row d-flex flex-nowrap">
+                                             <?php $no = 1; foreach($tampil as $key){?>
                                                 <!-- Card 1 -->
                                                 <div class="col-10 col-md-3">
+                                                
                                                    <div class="col-11 card m-3" style="min-width: 17rem; border-radius: 20px; border: none">
                                                       <div class="card shadow" style="border-radius: 20px; border: 1px solid #2322291a">
                                                          <!-- Image -->
                                                          <div class="container mt-2 pt-1">
                                                             <img
-                                                               src="asset/images/img/index/image_Our_Briquettes.png"
+                                                               src="<?php echo base_url().'upload/barang/'. $key->product_picture;?>"
                                                                class="card-img-top rounded-3"
                                                                alt="image_our_briquettes"
+                                                               width="260"
+                                                               height="180"
                                                             />
                                                          </div>
 
                                                          <div class="card-body">
                                                             <h6 class="card-title fw-bold col-10" style="font-size: 14px">
-                                                               Produk Briket asli indonesia asli 100 %
+                                                            <?php echo $key->product_name;?>
                                                             </h6>
                                                             <p class="card-text fs-10px fw-500">
-                                                               Coconut shells use to be considered agricultural waste, but today,
+                                                            <?php echo $key->product_deskripsi;?>
                                                             </p>
 
                                                             <!-- Specification -->
                                                             <div class="row mt-3" style="font-size: 12px">
-                                                               <div class="col-12 fw-bold">Specification</div>
-                                                               <div class="row mt-2">
+                                                               <div class="col-12 fw-bold"><?php echo $key->product_category;?></div>
+                                                               <!-- <div class="row mt-2">
                                                                   <div class="col-6 fs-10px">
                                                                      <p class="mb-2">Mouisture Max</p>
                                                                      <p class="mb-2">Ash Content Max</p>
@@ -231,7 +265,7 @@
                                                                      <p class="mb-2">:&nbsp; 1 Hours</p>
                                                                      <p class="mb-2">:&nbsp; up to 7.500 kcal/kg or by request</p>
                                                                   </div>
-                                                               </div>
+                                                               </div> -->
                                                             </div>
 
                                                             <!-- Button Lihat -->
@@ -247,286 +281,11 @@
                                                       </div>
                                                    </div>
                                                 </div>
+                                                
 
                                                 <!-- Card 2 -->
-                                                <div class="col-10 col-md-3">
-                                                   <div class="col-11 card m-3" style="min-width: 17rem; border-radius: 20px; border: none">
-                                                      <div class="card shadow" style="border-radius: 20px; border: 1px solid #2322291a">
-                                                         <!-- Image -->
-                                                         <div class="container mt-2 pt-1">
-                                                            <img
-                                                               src="asset/images/img/index/image_Our_Briquettes.png"
-                                                               class="card-img-top rounded-3"
-                                                               alt="image_our_briquettes"
-                                                            />
-                                                         </div>
-
-                                                         <div class="card-body">
-                                                            <h6 class="card-title fw-bold col-10" style="font-size: 14px">
-                                                               Produk Briket asli indonesia asli 100 %
-                                                            </h6>
-                                                            <p class="card-text fs-10px fw-500">
-                                                               Coconut shells use to be considered agricultural waste, but today,
-                                                            </p>
-
-                                                            <!-- Specification -->
-                                                            <div class="row mt-3" style="font-size: 12px">
-                                                               <div class="col-12 fw-bold">Specification</div>
-                                                               <div class="row mt-2">
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">Mouisture Max</p>
-                                                                     <p class="mb-2">Ash Content Max</p>
-                                                                     <p class="mb-2">Minimum Burn Time</p>
-                                                                     <p class="mb-2">Calorifix Value</p>
-                                                                  </div>
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">:&nbsp; 6% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 3% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 1 Hours</p>
-                                                                     <p class="mb-2">:&nbsp; up to 7.500 kcal/kg or by request</p>
-                                                                  </div>
-                                                               </div>
-                                                            </div>
-
-                                                            <!-- Button Lihat -->
-                                                            <div class="d-flex justify-content-end align-items-center mt-3">
-                                                               <a
-                                                                  href="frontend/pages/product_detail.html"
-                                                                  class="btn btn-primary d-flex justify-content-center align-items-center"
-                                                                  style="background-color: #015ea1; height: 25px; font-size: 12px; border: none"
-                                                                  >Lihat</a
-                                                               >
-                                                            </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
-
-                                          <!-- ====== Slide 2 ====== -->
-                                          <div class="carousel-item overflow-auto hide-scrollbars ms-4 ms-md-0 ps-1 pe-2">
-                                             <div class="row d-flex flex-nowrap">
-                                                <!-- Card 1 -->
-                                                <div class="col-10 col-md-3">
-                                                   <div class="col-11 card m-3" style="min-width: 17rem; border-radius: 20px; border: none">
-                                                      <div class="card shadow" style="border-radius: 20px; border: 1px solid #2322291a">
-                                                         <!-- Image -->
-                                                         <div class="container mt-2 pt-1">
-                                                            <img
-                                                               src="asset/images/img/index/image_Our_Briquettes.png"
-                                                               class="card-img-top rounded-3"
-                                                               alt="image_our_briquettes"
-                                                            />
-                                                         </div>
-
-                                                         <div class="card-body">
-                                                            <h6 class="card-title fw-bold col-10" style="font-size: 14px">
-                                                               Produk Briket asli indonesia asli 100 %
-                                                            </h6>
-                                                            <p class="card-text fs-10px fw-500">
-                                                               Coconut shells use to be considered agricultural waste, but today,
-                                                            </p>
-
-                                                            <!-- Specification -->
-                                                            <div class="row mt-3" style="font-size: 12px">
-                                                               <div class="col-12 fw-bold">Specification</div>
-                                                               <div class="row mt-2">
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">Mouisture Max</p>
-                                                                     <p class="mb-2">Ash Content Max</p>
-                                                                     <p class="mb-2">Minimum Burn Time</p>
-                                                                     <p class="mb-2">Calorifix Value</p>
-                                                                  </div>
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">:&nbsp; 6% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 3% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 1 Hours</p>
-                                                                     <p class="mb-2">:&nbsp; up to 7.500 kcal/kg or by request</p>
-                                                                  </div>
-                                                               </div>
-                                                            </div>
-
-                                                            <!-- Button Lihat -->
-                                                            <div class="d-flex justify-content-end align-items-center mt-3">
-                                                               <a
-                                                                  href="frontend/pages/product_detail.html"
-                                                                  class="btn btn-primary d-flex justify-content-center align-items-center"
-                                                                  style="background-color: #015ea1; height: 25px; font-size: 12px; border: none"
-                                                                  >Lihat</a
-                                                               >
-                                                            </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-
-                                                <!-- Card 2 -->
-                                                <div class="col-10 col-md-3">
-                                                   <div class="col-11 card m-3" style="min-width: 17rem; border-radius: 20px; border: none">
-                                                      <div class="card shadow" style="border-radius: 20px; border: 1px solid #2322291a">
-                                                         <!-- Image -->
-                                                         <div class="container mt-2 pt-1">
-                                                            <img
-                                                               src="asset/images/img/index/image_Our_Briquettes.png"
-                                                               class="card-img-top rounded-3"
-                                                               alt="image_our_briquettes"
-                                                            />
-                                                         </div>
-
-                                                         <div class="card-body">
-                                                            <h6 class="card-title fw-bold col-10" style="font-size: 14px">
-                                                               Produk Briket asli indonesia asli 100 %
-                                                            </h6>
-                                                            <p class="card-text fs-10px fw-500">
-                                                               Coconut shells use to be considered agricultural waste, but today,
-                                                            </p>
-
-                                                            <!-- Specification -->
-                                                            <div class="row mt-3" style="font-size: 12px">
-                                                               <div class="col-12 fw-bold">Specification</div>
-                                                               <div class="row mt-2">
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">Mouisture Max</p>
-                                                                     <p class="mb-2">Ash Content Max</p>
-                                                                     <p class="mb-2">Minimum Burn Time</p>
-                                                                     <p class="mb-2">Calorifix Value</p>
-                                                                  </div>
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">:&nbsp; 6% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 3% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 1 Hours</p>
-                                                                     <p class="mb-2">:&nbsp; up to 7.500 kcal/kg or by request</p>
-                                                                  </div>
-                                                               </div>
-                                                            </div>
-
-                                                            <!-- Button Lihat -->
-                                                            <div class="d-flex justify-content-end align-items-center mt-3">
-                                                               <a
-                                                                  href="frontend/pages/product_detail.html"
-                                                                  class="btn btn-primary d-flex justify-content-center align-items-center"
-                                                                  style="background-color: #015ea1; height: 25px; font-size: 12px; border: none"
-                                                                  >Lihat</a
-                                                               >
-                                                            </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
-
-                                          <!-- ====== Slide 3 ====== -->
-                                          <div class="carousel-item overflow-auto hide-scrollbars ms-4 ms-md-0 ps-1 pe-2">
-                                             <div class="row d-flex flex-nowrap">
-                                                <!-- Card 1 -->
-                                                <div class="col-10 col-md-3">
-                                                   <div class="col-11 card m-3" style="min-width: 17rem; border-radius: 20px; border: none">
-                                                      <div class="card shadow" style="border-radius: 20px; border: 1px solid #2322291a">
-                                                         <!-- Image -->
-                                                         <div class="container mt-2 pt-1">
-                                                            <img
-                                                               src="asset/images/img/index/image_Our_Briquettes.png"
-                                                               class="card-img-top rounded-3"
-                                                               alt="image_our_briquettes"
-                                                            />
-                                                         </div>
-
-                                                         <div class="card-body">
-                                                            <h6 class="card-title fw-bold col-10" style="font-size: 14px">
-                                                               Produk Briket asli indonesia asli 100 %
-                                                            </h6>
-                                                            <p class="card-text fs-10px fw-500">
-                                                               Coconut shells use to be considered agricultural waste, but today,
-                                                            </p>
-
-                                                            <!-- Specification -->
-                                                            <div class="row mt-3" style="font-size: 12px">
-                                                               <div class="col-12 fw-bold">Specification</div>
-                                                               <div class="row mt-2">
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">Mouisture Max</p>
-                                                                     <p class="mb-2">Ash Content Max</p>
-                                                                     <p class="mb-2">Minimum Burn Time</p>
-                                                                     <p class="mb-2">Calorifix Value</p>
-                                                                  </div>
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">:&nbsp; 6% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 3% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 1 Hours</p>
-                                                                     <p class="mb-2">:&nbsp; up to 7.500 kcal/kg or by request</p>
-                                                                  </div>
-                                                               </div>
-                                                            </div>
-
-                                                            <!-- Button Lihat -->
-                                                            <div class="d-flex justify-content-end align-items-center mt-3">
-                                                               <a
-                                                                  href="frontend/pages/product_detail.html"
-                                                                  class="btn btn-primary d-flex justify-content-center align-items-center"
-                                                                  style="background-color: #015ea1; height: 25px; font-size: 12px; border: none"
-                                                                  >Lihat</a
-                                                               >
-                                                            </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-
-                                                <!-- Card 2 -->
-                                                <div class="col-10 col-md-3">
-                                                   <div class="col-11 card m-3" style="min-width: 17rem; border-radius: 20px; border: none">
-                                                      <div class="card shadow" style="border-radius: 20px; border: 1px solid #2322291a">
-                                                         <!-- Image -->
-                                                         <div class="container mt-2 pt-1">
-                                                            <img
-                                                               src="asset/images/img/index/image_Our_Briquettes.png"
-                                                               class="card-img-top rounded-3"
-                                                               alt="image_our_briquettes"
-                                                            />
-                                                         </div>
-
-                                                         <div class="card-body">
-                                                            <h6 class="card-title fw-bold col-10" style="font-size: 14px">
-                                                               Produk Briket asli indonesia asli 100 %
-                                                            </h6>
-                                                            <p class="card-text fs-10px fw-500">
-                                                               Coconut shells use to be considered agricultural waste, but today,
-                                                            </p>
-
-                                                            <!-- Specification -->
-                                                            <div class="row mt-3" style="font-size: 12px">
-                                                               <div class="col-12 fw-bold">Specification</div>
-                                                               <div class="row mt-2">
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">Mouisture Max</p>
-                                                                     <p class="mb-2">Ash Content Max</p>
-                                                                     <p class="mb-2">Minimum Burn Time</p>
-                                                                     <p class="mb-2">Calorifix Value</p>
-                                                                  </div>
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">:&nbsp; 6% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 3% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 1 Hours</p>
-                                                                     <p class="mb-2">:&nbsp; up to 7.500 kcal/kg or by request</p>
-                                                                  </div>
-                                                               </div>
-                                                            </div>
-
-                                                            <!-- Button Lihat -->
-                                                            <div class="d-flex justify-content-end align-items-center mt-3">
-                                                               <a
-                                                                  href="frontend/pages/product_detail.html"
-                                                                  class="btn btn-primary d-flex justify-content-center align-items-center"
-                                                                  style="background-color: #015ea1; height: 25px; font-size: 12px; border: none"
-                                                                  >Lihat</a
-                                                               >
-                                                            </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
+                                                
+                                                <?php $no++;}?>
                                              </div>
                                           </div>
                                        </div>
@@ -545,348 +304,6 @@
                                              class="carousel-control-next d-none d-md-block button-prev-next-carousel-card"
                                              type="button"
                                              data-bs-target="#carousel1"
-                                             data-bs-slide="next"
-                                          >
-                                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                             <span class="visually-hidden">Next</span>
-                                          </button>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-
-                           <!-- ===== Card Data 2 ===== -->
-                           <div class="tab-pane" id="data2">
-                              <div class="row mt-4">
-                                 <div class="col-12 col-md-12">
-                                    <div id="carousel2" class="carousel slide" data-bs-ride="true">
-                                       <div class="carousel-indicators d-none d-md-flex" style="top: 490px">
-                                          <button
-                                             type="button"
-                                             data-bs-target="#carousel2"
-                                             data-bs-slide-to="0"
-                                             class="briquettes-navigator-carousel active"
-                                             aria-current="true"
-                                             aria-label="Slide 1"
-                                          ></button>
-                                          <button
-                                             type="button"
-                                             data-bs-target="#carousel2"
-                                             data-bs-slide-to="1"
-                                             aria-label="Slide 2"
-                                             class="briquettes-navigator-carousel"
-                                          ></button>
-                                          <button
-                                             type="button"
-                                             data-bs-target="#carousel2"
-                                             data-bs-slide-to="2"
-                                             aria-label="Slide 3"
-                                             class="briquettes-navigator-carousel"
-                                          ></button>
-                                       </div>
-                                       <div class="carousel-inner mw-sm-99vw" style="min-width: 85vw; margin-left: -45px; margin-top: -30px">
-                                          <!-- ====== Slide 1 ====== -->
-                                          <div class="carousel-item active overflow-auto hide-scrollbars ms-4 ms-md-0 ps-1 pe-2">
-                                             <div class="row d-flex flex-nowrap">
-                                                <!-- Card 1 -->
-                                                <div class="col-10 col-md-3">
-                                                   <div class="col-11 card m-3" style="min-width: 17rem; border-radius: 20px; border: none">
-                                                      <div class="card shadow" style="border-radius: 20px; border: 1px solid #2322291a">
-                                                         <!-- Image -->
-                                                         <div class="container mt-2 pt-1">
-                                                            <img
-                                                               src="asset/images/img/index/image_Our_Briquettes.png"
-                                                               class="card-img-top rounded-3"
-                                                               alt="image_our_briquettes"
-                                                            />
-                                                         </div>
-
-                                                         <div class="card-body">
-                                                            <h6 class="card-title fw-bold col-10" style="font-size: 14px">
-                                                               <!-- Produk Briket asli indonesia asli 100 %  -->
-                                                               ini data di filter Cocopea
-                                                            </h6>
-                                                            <p class="card-text fs-10px fw-500">
-                                                               Coconut shells use to be considered agricultural waste, but today,
-                                                            </p>
-
-                                                            <!-- Specification -->
-                                                            <div class="row mt-3" style="font-size: 12px">
-                                                               <div class="col-12 fw-bold">Specification</div>
-                                                               <div class="row mt-2">
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">Mouisture Max</p>
-                                                                     <p class="mb-2">Ash Content Max</p>
-                                                                     <p class="mb-2">Minimum Burn Time</p>
-                                                                     <p class="mb-2">Calorifix Value</p>
-                                                                  </div>
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">:&nbsp; 6% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 3% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 1 Hours</p>
-                                                                     <p class="mb-2">:&nbsp; up to 7.500 kcal/kg or by request</p>
-                                                                  </div>
-                                                               </div>
-                                                            </div>
-
-                                                            <!-- Button Lihat -->
-                                                            <div class="d-flex justify-content-end align-items-center mt-3">
-                                                               <a
-                                                                  href="frontend/pages/product_detail.html"
-                                                                  class="btn btn-primary d-flex justify-content-center align-items-center"
-                                                                  style="background-color: #015ea1; height: 25px; font-size: 12px; border: none"
-                                                                  >Lihat</a
-                                                               >
-                                                            </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-
-                                                <!-- Card 2 -->
-                                                <div class="col-10 col-md-3">
-                                                   <div class="col-11 card m-3" style="min-width: 17rem; border-radius: 20px; border: none">
-                                                      <div class="card shadow" style="border-radius: 20px; border: 1px solid #2322291a">
-                                                         <!-- Image -->
-                                                         <div class="container mt-2 pt-1">
-                                                            <img
-                                                               src="asset/images/img/index/image_Our_Briquettes.png"
-                                                               class="card-img-top rounded-3"
-                                                               alt="image_our_briquettes"
-                                                            />
-                                                         </div>
-
-                                                         <div class="card-body">
-                                                            <h6 class="card-title fw-bold col-10" style="font-size: 14px">
-                                                               <!-- Produk Briket asli indonesia asli 100 % -->
-                                                               ini data di filter Cocopea
-                                                            </h6>
-                                                            <p class="card-text fs-10px fw-500">
-                                                               Coconut shells use to be considered agricultural waste, but today,
-                                                            </p>
-
-                                                            <!-- Specification -->
-                                                            <div class="row mt-3" style="font-size: 12px">
-                                                               <div class="col-12 fw-bold">Specification</div>
-                                                               <div class="row mt-2">
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">Mouisture Max</p>
-                                                                     <p class="mb-2">Ash Content Max</p>
-                                                                     <p class="mb-2">Minimum Burn Time</p>
-                                                                     <p class="mb-2">Calorifix Value</p>
-                                                                  </div>
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">:&nbsp; 6% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 3% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 1 Hours</p>
-                                                                     <p class="mb-2">:&nbsp; up to 7.500 kcal/kg or by request</p>
-                                                                  </div>
-                                                               </div>
-                                                            </div>
-
-                                                            <!-- Button Lihat -->
-                                                            <div class="d-flex justify-content-end align-items-center mt-3">
-                                                               <a
-                                                                  href="frontend/pages/product_detail.html"
-                                                                  class="btn btn-primary d-flex justify-content-center align-items-center"
-                                                                  style="background-color: #015ea1; height: 25px; font-size: 12px; border: none"
-                                                                  >Lihat</a
-                                                               >
-                                                            </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <!-- =========== Button Prev & Next =========== -->
-                                       <div class="container-button-prev-next-carousel-card">
-                                          <button
-                                             class="carousel-control-prev d-none d-md-block button-prev-next-carousel-card"
-                                             type="button"
-                                             data-bs-target="#carousel2"
-                                             data-bs-slide="prev"
-                                          >
-                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                             <span class="visually-hidden">Previous</span>
-                                          </button>
-                                          <button
-                                             class="carousel-control-next d-none d-md-block button-prev-next-carousel-card"
-                                             type="button"
-                                             data-bs-target="#carousel2"
-                                             data-bs-slide="next"
-                                          >
-                                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                             <span class="visually-hidden">Next</span>
-                                          </button>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-
-                           <!-- ===== Card Data 3 ===== -->
-                           <div class="tab-pane" id="data3">
-                              <div class="row mt-4">
-                                 <div class="col-12 col-md-12">
-                                    <div id="carousel3" class="carousel slide" data-bs-ride="true">
-                                       <div class="carousel-indicators d-none d-md-flex" style="top: 490px">
-                                          <button
-                                             type="button"
-                                             data-bs-target="#carousel3"
-                                             data-bs-slide-to="0"
-                                             class="briquettes-navigator-carousel active"
-                                             aria-current="true"
-                                             aria-label="Slide 1"
-                                          ></button>
-                                          <button
-                                             type="button"
-                                             data-bs-target="#carousel3"
-                                             data-bs-slide-to="1"
-                                             aria-label="Slide 2"
-                                             class="briquettes-navigator-carousel"
-                                          ></button>
-                                          <button
-                                             type="button"
-                                             data-bs-target="#carousel3"
-                                             data-bs-slide-to="2"
-                                             aria-label="Slide 3"
-                                             class="briquettes-navigator-carousel"
-                                          ></button>
-                                       </div>
-                                       <div class="carousel-inner mw-sm-99vw" style="min-width: 85vw; margin-left: -45px; margin-top: -30px">
-                                          <!-- ====== Slide 1 ====== -->
-                                          <div class="carousel-item active overflow-auto hide-scrollbars ms-4 ms-md-0 ps-1 pe-2">
-                                             <div class="row d-flex flex-nowrap">
-                                                <!-- Card 1 -->
-                                                <div class="col-10 col-md-3">
-                                                   <div class="col-11 card m-3" style="min-width: 17rem; border-radius: 20px; border: none">
-                                                      <div class="card shadow" style="border-radius: 20px; border: 1px solid #2322291a">
-                                                         <!-- Image -->
-                                                         <div class="container mt-2 pt-1">
-                                                            <img
-                                                               src="asset/images/img/index/image_Our_Briquettes.png"
-                                                               class="card-img-top rounded-3"
-                                                               alt="image_our_briquettes"
-                                                            />
-                                                         </div>
-
-                                                         <div class="card-body">
-                                                            <h6 class="card-title fw-bold col-10" style="font-size: 14px">
-                                                               <!-- Produk Briket asli indonesia asli 100 %  -->
-                                                               ini data di filter Pisanh
-                                                            </h6>
-                                                            <p class="card-text fs-10px fw-500">
-                                                               Coconut shells use to be considered agricultural waste, but today,
-                                                            </p>
-
-                                                            <!-- Specification -->
-                                                            <div class="row mt-3" style="font-size: 12px">
-                                                               <div class="col-12 fw-bold">Specification</div>
-                                                               <div class="row mt-2">
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">Mouisture Max</p>
-                                                                     <p class="mb-2">Ash Content Max</p>
-                                                                     <p class="mb-2">Minimum Burn Time</p>
-                                                                     <p class="mb-2">Calorifix Value</p>
-                                                                  </div>
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">:&nbsp; 6% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 3% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 1 Hours</p>
-                                                                     <p class="mb-2">:&nbsp; up to 7.500 kcal/kg or by request</p>
-                                                                  </div>
-                                                               </div>
-                                                            </div>
-
-                                                            <!-- Button Lihat -->
-                                                            <div class="d-flex justify-content-end align-items-center mt-3">
-                                                               <a
-                                                                  href="frontend/pages/product_detail.html"
-                                                                  class="btn btn-primary d-flex justify-content-center align-items-center"
-                                                                  style="background-color: #015ea1; height: 25px; font-size: 12px; border: none"
-                                                                  >Lihat</a
-                                                               >
-                                                            </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-
-                                                <!-- Card 2 -->
-                                                <div class="col-10 col-md-3">
-                                                   <div class="col-11 card m-3" style="min-width: 17rem; border-radius: 20px; border: none">
-                                                      <div class="card shadow" style="border-radius: 20px; border: 1px solid #2322291a">
-                                                         <!-- Image -->
-                                                         <div class="container mt-2 pt-1">
-                                                            <img
-                                                               src="asset/images/img/index/image_Our_Briquettes.png"
-                                                               class="card-img-top rounded-3"
-                                                               alt="image_our_briquettes"
-                                                            />
-                                                         </div>
-
-                                                         <div class="card-body">
-                                                            <h6 class="card-title fw-bold col-10" style="font-size: 14px">
-                                                               <!-- Produk Briket asli indonesia asli 100 % -->
-                                                               ini data di filter Pisang
-                                                            </h6>
-                                                            <p class="card-text fs-10px fw-500">
-                                                               Coconut shells use to be considered agricultural waste, but today,
-                                                            </p>
-
-                                                            <!-- Specification -->
-                                                            <div class="row mt-3" style="font-size: 12px">
-                                                               <div class="col-12 fw-bold">Specification</div>
-                                                               <div class="row mt-2">
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">Mouisture Max</p>
-                                                                     <p class="mb-2">Ash Content Max</p>
-                                                                     <p class="mb-2">Minimum Burn Time</p>
-                                                                     <p class="mb-2">Calorifix Value</p>
-                                                                  </div>
-                                                                  <div class="col-6 fs-10px">
-                                                                     <p class="mb-2">:&nbsp; 6% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 3% or by request</p>
-                                                                     <p class="mb-2">:&nbsp; 1 Hours</p>
-                                                                     <p class="mb-2">:&nbsp; up to 7.500 kcal/kg or by request</p>
-                                                                  </div>
-                                                               </div>
-                                                            </div>
-
-                                                            <!-- Button Lihat -->
-                                                            <div class="d-flex justify-content-end align-items-center mt-3">
-                                                               <a
-                                                                  href="frontend/pages/product_detail.html"
-                                                                  class="btn btn-primary d-flex justify-content-center align-items-center"
-                                                                  style="background-color: #015ea1; height: 25px; font-size: 12px; border: none"
-                                                                  >Lihat</a
-                                                               >
-                                                            </div>
-                                                         </div>
-                                                      </div>
-                                                   </div>
-                                                </div>
-                                             </div>
-                                          </div>
-                                       </div>
-                                       <!-- =========== Button Prev & Next =========== -->
-                                       <div class="container-button-prev-next-carousel-card">
-                                          <button
-                                             class="carousel-control-prev d-none d-md-block button-prev-next-carousel-card"
-                                             type="button"
-                                             data-bs-target="#carousel3"
-                                             data-bs-slide="prev"
-                                          >
-                                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                             <span class="visually-hidden">Previous</span>
-                                          </button>
-                                          <button
-                                             class="carousel-control-next d-none d-md-block button-prev-next-carousel-card"
-                                             type="button"
-                                             data-bs-target="#carousel3"
                                              data-bs-slide="next"
                                           >
                                              <span class="carousel-control-next-icon" aria-hidden="true"></span>
@@ -1293,25 +710,26 @@
             <!-- ========== Contact Form ========== -->
             <div class="col-12 col-md-6 p-3 d-flex justify-content-center justify-content-md-start align-items-center flex-wrap bg-white rounded-3">
                <div class="card col-10 col-md-8 p-4" style="border-radius: 16px; border: none; box-shadow: 14px 24px 72px rgba(102, 102, 102, 0.1)">
-                  <form class="col-12">
+                  <form action= "<?php echo site_url('Halaman_awal/simpan') ?>" class="col-12" method="post">
+                  <input name="order_id" type="hidden" class="order_id">
                      <div class="mb-3">
                         <label for="nama" class="form-label">Nama</label>
-                        <input type="email" class="form-control input-contact-form" id="nama" aria-describedby="emailHelp" />
+                        <input type="text" class="form-control input-contact-form" name= "order_name" aria-describedby="emailHelp" />
                      </div>
                      <div class="mb-3">
                         <label for="email" class="form-label">Email</label>
-                        <input type="email" class="form-control input-contact-form" id="email" aria-describedby="emailHelp" />
+                        <input type="email" class="form-control input-contact-form" name="order_email" aria-describedby="emailHelp" />
                      </div>
                      <div class="mb-3">
                         <label for="alamat">Alamat</label>
-                        <textarea class="form-control input-contact-form" id="alamat" style="height: 80px"></textarea>
+                        <textarea class="form-control input-contact-form" name="order_address" style="height: 80px"></textarea>
                      </div>
                      <div class="mb-3">
                         <label for="noWA" class="form-label">No Wa</label>
-                        <input type="email" class="form-control input-contact-form" id="noWA" aria-describedby="emailHelp" />
+                        <input type="text " class="form-control input-contact-form" name="order_phone" aria-describedby="emailHelp" />
                      </div>
                      <div class="col-12 d-flex justify-content-end">
-                        <button type="submit" class="col-7 btn btn-primary button-contact-form">Order Sekarang</button>
+                        <button type="submit" class="col-7 btn btn-primary btn-tambah">Order Sekarang</button>
                      </div>
                   </form>
                </div>
@@ -1386,6 +804,91 @@
          </div>
       </footer>
 
-      <?php $this->load->view('js')?>
+      <script
+         src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+         crossorigin="anonymous"
+      ></script>
+
+      <!-- <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script> -->
+
+      <script
+      src="https://kit.fontawesome.com/32f82e1dca.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="<?php echo base_url()?>asset/js/index.js"></script> -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+    <script>
+    function clear(){
+		$('form').trigger("reset");
+		$('form input, form select, form textarea, form button').prop("disabled",false);
+		$(".kelompok-detail:not(:first)").remove();
+	   }
+   </script>
+   <script>
+	function hapus(id,tabel){
+		Swal.fire({
+			html:
+				'<p class="font-16 font-weight-bold mt-3" style="font-family: Roboto, sans-serif"><b>Apakah Anda yakin ingin menghapus Data ini?</b></p><br><p class="font-weight-regular mb-1 px-3" style="font-family: Roboto, sans-serif; font-size: 16px;color: #7C8CA3!important " text-align="justify">Data yang telah dihapus tidak akan bisa dipulihkan kembali.</p>',
+			showCancelButton: true,
+			cancelButtonText: "Batal",
+			confirmButtonText: 'Hapus',
+			confirmButtonColor: '#dc3545',
+			reverseButtons: true
+		}).then((result) => {
+			if(result.value){
+				$.ajax({
+					url : "<?php echo base_url();?>"+tabel+"/hapus",
+					type : "POST",
+					data : {
+						id : id
+					},
+					success : function(data) {
+						new PNotify({
+							title: 'Sukses',
+							text: 'Berhasil Dihapus',
+							type: 'success',
+							nonblock: {
+								nonblock: true
+							},
+							styling: 'bootstrap3'
+						});
+						setTimeout(
+							function() {
+								location.reload();
+							}, 1000
+						);
+					},
+					error : function () {
+						new PNotify({
+							title: 'Gagal',
+							text: 'Gagal Dihapus',
+							type: 'error',
+							nonblock: {
+								nonblock: true
+							},
+							styling: 'bootstrap3'
+						});
+						setTimeout(
+							function() {
+								location.reload();
+							}, 1000
+						);
+					}
+				});
+			}
+		});
+	}
+	</script>
+<script src="<?php echo base_url();?>asset/js/pnotify/dist/pnotify.js"></script>
+<script src="<?php echo base_url();?>asset/js/pnotify/dist/pnotify.buttons.js"></script>
+<script src="<?php echo base_url();?>asset/js/pnotify/dist/pnotify.nonblock.js"></script>
+<script src="<?php echo base_url();?>asset/js/sweetalert2/sweetalert2.min.js"></script>
+
    </body>
 </html>

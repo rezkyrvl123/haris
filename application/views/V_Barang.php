@@ -10,7 +10,49 @@
   <title>Damatiza - Dashboard</title>
   <!-- Favicon Icon -->
   <link rel="icon" type="image/x-icon" src="<?php echo base_url()?>asset/images/logo/icon.png" />
-  <?php $this->load->view('css')?>
+  <!-- Bootstrap v.5.2 -->
+<link
+         href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
+         rel="stylesheet"
+         integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
+         crossorigin="anonymous"
+      />
+
+      <!-- Google Fonts -->
+      <link
+         href="https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,700;1,800;1,900&family=Quicksand:wght@300;400;500;600;700&display=swap"
+         rel="stylesheet"
+      />
+
+      <!-- Bootstrap Icons -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css" />
+
+      <!-- Slider milik Our Briquettes -->
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/css/splide.min.css" />
+
+      <!-- ====== External CSS Per-Komponen ===== -->
+      <!-- Navbar Mobile -->
+      <link rel="stylesheet" href="<?php echo base_url()?>asset/css/index/1.navbar.css" />
+      <!-- Aside Our Briquettes -->
+      <link rel="stylesheet" href="<?php echo base_url()?>asset/css/index/2.aside_briquettes.css" />
+      <!-- Aside Faq -->
+      <link rel="stylesheet" href="<?php echo base_url()?>asset/css/index/3.aside_faq.css" />
+      <!-- Aside Process Production -->
+      <link rel="stylesheet" href="<?php echo base_url()?>asset/css/index/4.aside_process_production.css" />
+      <!-- Aside Get Started -->
+      <link rel="stylesheet" href="<?php echo base_url()?>asset/css/index/5.aside_get_started.css" />
+      <!-- Media Query -->
+      <link rel="stylesheet" href="<?php echo base_url()?>asset/css/index/6.media_query_public.css" />
+      <link rel="stylesheet" href="<?php echo base_url()?>asset/css/styles.css" />
+      <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"/>
+      <link rel="stylesheet" href="<?php echo base_url();?>asset/js/pnotify/dist/pnotify.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>asset/js/pnotify/dist/pnotify.buttons.css">
+	<link rel="stylesheet" href="<?php echo base_url();?>asset/js/pnotify/dist/pnotify.nonblock.css">
+   <link rel="stylesheet" href="<?php echo base_url();?>asset/js/sweetalert2/sweetalert2.min.css">
   <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
@@ -23,7 +65,7 @@
       </button>
     </div>
     <div class="logo-brand mt-lg-5">
-      <img src="<?php echo base_url()?>/assets/images/logo.png" alt="Logo " width="52" height="50" />
+      <img src="<?php echo base_url()?>asset/images/logo.png" alt="Logo " width="52" height="50" />
       <div>
         <h6 class="title-store">Damatiza </h6>
         <p class="tagline-store">Comfortable on the Briquettes</p>
@@ -34,7 +76,7 @@
 
       <div class="section-menu">
         <p class="fs-18 fw-500 mb-2">Dashboard</p>
-        <a href="#" class="item-menu" onclick="handleClickMenu(this)">
+        <a href="<?php echo base_url("Order")?>" class="item-menu" onclick="handleClickMenu(this)">
           <svg fill="none">
             <path
               d="M15.4559 6.58621V7.08621H15.9559H17.496C18.3534 7.08621 19.0124 7.67074 19.0966 8.36425L19.0966 8.36425L19.0973 8.36975L20.4776 18.7744C20.7115 20.7152 19.0442 22.5 16.7797 22.5H7.22014C4.95566 22.5 3.28838 20.7152 3.52228 18.7743L4.90258 8.36975L4.90261 8.36975L4.90328 8.36425C4.98747 7.67074 5.64646 7.08621 6.50387 7.08621H8.04397H8.54397V6.58621V5.62069C8.54397 3.93794 10.0487 2.5 11.9999 2.5C13.9512 2.5 15.4559 3.93794 15.4559 5.62069V6.58621ZM14.8735 8.03448V7.53448H14.3735H9.62636H9.12636V8.03448V10.4483C9.12636 10.5313 9.03859 10.6724 8.83516 10.6724C8.63174 10.6724 8.54397 10.5313 8.54397 10.4483V8.03448V7.53448H8.04397H6.50387C6.01844 7.53448 5.54941 7.87337 5.48368 8.40043L4.1033 18.8056L4.10327 18.8056L4.1026 18.8111C3.88702 20.5869 5.3988 22.0517 7.22014 22.0517H16.7797C18.6011 22.0517 20.1129 20.5869 19.8973 18.8111L19.8973 18.8111L19.8966 18.8056L18.5162 8.40048C18.4505 7.87339 17.9815 7.53448 17.496 7.53448H15.9559H15.4559V8.03448V10.4483C15.4559 10.5313 15.3681 10.6724 15.1647 10.6724C14.9613 10.6724 14.8735 10.5313 14.8735 10.4483V8.03448ZM14.3735 7.08621H14.8735V6.58621V5.62069C14.8735 4.104 13.5444 2.94828 11.9999 2.94828C10.4555 2.94828 9.12636 4.104 9.12636 5.62069V6.58621V7.08621H9.62636H14.3735ZM9.33516 16C9.33516 15.917 9.42294 15.7759 9.62636 15.7759H14.3735C14.5769 15.7759 14.6647 15.917 14.6647 16C14.6647 16.083 14.5769 16.2241 14.3735 16.2241H9.62636C9.42293 16.2241 9.33516 16.083 9.33516 16Z"
@@ -44,7 +86,7 @@
 
         </a>
 
-        <a href="<?php echo base_url()?>index.php/Barang" class="item-menu" onclick="handleClickMenu(this)">
+        <a href="<?php echo base_url()?>Barang" class="item-menu" onclick="handleClickMenu(this)">
           <svg fill="none">
             <mask id="path-1-inside-1_1_75" fill="white">
               <path fill-rule="evenodd" clip-rule="evenodd"
@@ -130,10 +172,12 @@
 							</div>
 				</div>
         <div class="form-group">
+            <?php for ($i=1; $i <=3 ; $i++) :?>
                 <label class="control-label col-xs-3" >Gambar</label>
                 <div class="col-xs-8">
-                    <input name="image" class="form-control" type="file" placeholder="Image...">
+                    <input name="product_picture" class="form-control" type="file" placeholder="Image...">
                 </div>
+              <?php endfor;?>
         </div>
       </div>
       <div class="modal-footer">
@@ -174,9 +218,12 @@
               <p class="label-detail mb-1">Price:</p>
               <p class="price-detail"><?php echo $key->product_price;?></p>
             </div>
-            <button class="buy-product button btn-rounded active" onclick="handleBuy(this)">
-              Buy Now
-            </button>
+            <button type="button" class="btn btn-sm btn-danger btn-hapus" value="<?php echo $key->product_id?>" data-toggle="tooltip" title="Hapus">
+														<i class="fa fa-trash"></i>
+								</button>
+                <button type="button" class="btn btn-sm btn-warning btn-ubah" value="<?php echo $key->product_id?>" data-toggle="tooltip" title="Ubah">
+														<i class="fa fa-edit"></i>
+													</button>
           </div>
         </div>
       <?php $no++;}?>
@@ -186,19 +233,35 @@
     <section class="d-flex flex-column gap-4 mb-5">
     </section>
   </main>
-  <?php $this->load->view('js')?>
+  
 </body>
 <script>
     $(".btn-tambah").on("click", function(){
 				$("#myModalLabel").html('Tambah Data');
 				$("form").attr("action","<?php echo base_url();?>"+'index.php/Barang/simpan');
-				// clear();
-				// $(".product_picture").parent().find("img").attr("src","");
-				// $(".product_picture").prop("required",true);
+				clear();
+				$(".product_picture").parent().find("img").attr("src","");
+				$(".product_picture").prop("required",true);
 				$(".modal-tampil").modal("show");
 				$(".btn-simpan").show();
 			});
     
+      $(document).on("change", ".product_picture", function(){
+				var input = this;
+				var html = $(this);
+				if (input.files && input.files[0]) {
+					var reader = new FileReader();
+
+					reader.onload = function (e) {
+						html.parent().find("img").attr('src',e.target.result);
+					}
+
+					reader.readAsDataURL(input.files[0]);
+				}else{
+					html.parent().find("img").removeAttr('src');
+				}
+			});
+
       function get_data(product_id){
 				$.ajax({
 					url : "<?php echo base_url();?>"+'index.php/Barang/tampil_barang',
@@ -209,17 +272,121 @@
 					dataType: 'json',
 					success: function(respond){
 						$(".product_id").val(respond.product_id);
-						$(".product_name").val(respond.nama_barang);
+						$(".product_name").val(respond.product_name);
 						$(".product_category").val(respond.product_category);
 						$(".product_deskripsi").val(respond.product_deskripsi);
 						$(".product_price").val(respond.product_price);
 						$(".product_picture").parent().find("img").attr("src","/upload/barang/"+respond.product_picture);
 						// console.log(respond.id_jenis_barang)
+            // var_dump(respond.product_id);
+            // die;
 					},
 					error: function() {
 						console.log('Error');
 					}
 				});
 			};
+      $(".btn-hapus").on("click", function(){
+				var id = $(this).attr("value");
+				hapus(id,'Barang');
+			});
+      $(".btn-ubah").on("click", function(){
+				var id = $(this).attr("value");
+				$("#myModalLabel").html('Ubah Data');
+				$("form").attr("action","<?php echo base_url();?>"+'index.php/Barang/ubah');
+				$(".password").prop("required", false);
+				clear();
+				$(".product_picture").parent().find("img").attr("src","");
+				$(".product_picture").prop("required",false);
+				get_data(id);
+				$(".modal-tampil").modal("show");
+				$(".btn-simpan").show();
+			});
   </script>
+  <script
+         src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
+         integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
+         crossorigin="anonymous"
+      ></script>
+
+      <!-- <script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@3.6.12/dist/js/splide.min.js"></script> -->
+
+      <script
+      src="https://kit.fontawesome.com/32f82e1dca.js"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="<?php echo base_url()?>asset/js/index.js"></script> -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+      crossorigin="anonymous"
+    ></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> -->
+    <script>
+    function clear(){
+		$('form').trigger("reset");
+		$('form input, form select, form textarea, form button').prop("disabled",false);
+		$(".kelompok-detail:not(:first)").remove();
+	   }
+   </script>
+   <script>
+	function hapus(id,tabel){
+		Swal.fire({
+			html:
+				'<p class="font-16 font-weight-bold mt-3" style="font-family: Roboto, sans-serif"><b>Apakah Anda yakin ingin menghapus Data ini?</b></p><br><p class="font-weight-regular mb-1 px-3" style="font-family: Roboto, sans-serif; font-size: 16px;color: #7C8CA3!important " text-align="justify">Data yang telah dihapus tidak akan bisa dipulihkan kembali.</p>',
+			showCancelButton: true,
+			cancelButtonText: "Batal",
+			confirmButtonText: 'Hapus',
+			confirmButtonColor: '#dc3545',
+			reverseButtons: true
+		}).then((result) => {
+			if(result.value){
+				$.ajax({
+					url : "<?php echo base_url();?>"+tabel+"/hapus",
+					type : "POST",
+					data : {
+						id : id
+					},
+					success : function(data) {
+						new PNotify({
+							title: 'Sukses',
+							text: 'Berhasil Dihapus',
+							type: 'success',
+							nonblock: {
+								nonblock: true
+							},
+							styling: 'bootstrap3'
+						});
+						setTimeout(
+							function() {
+								location.reload();
+							}, 1000
+						);
+					},
+					error : function () {
+						new PNotify({
+							title: 'Gagal',
+							text: 'Gagal Dihapus',
+							type: 'error',
+							nonblock: {
+								nonblock: true
+							},
+							styling: 'bootstrap3'
+						});
+						setTimeout(
+							function() {
+								location.reload();
+							}, 1000
+						);
+					}
+				});
+			}
+		});
+	}
+	</script>
+<script src="<?php echo base_url();?>asset/js/pnotify/dist/pnotify.js"></script>
+<script src="<?php echo base_url();?>asset/js/pnotify/dist/pnotify.buttons.js"></script>
+<script src="<?php echo base_url();?>asset/js/pnotify/dist/pnotify.nonblock.js"></script>
+		<script src="<?php echo base_url();?>asset/js/sweetalert2/sweetalert2.min.js"></script>
+
 </html>
